@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>3年1組 ホームページ</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="hero">
+    <div class="slideshow-container">
+      <div class="slide fade">
+        <img src="長谷川先生授業.JPG" alt="スライド1">
+      </div>
+      <div class="slide fade">
+        <img src="考古館前　全体写真.JPG" alt="スライド2">
+      </div>
+      <div class="slide fade">
+        <img src="グループマッチ：バレー津島.JPG" alt="スライド3">
+      </div>
+      <div class="slide fade">
+        <img src="IMG_8502.JPG" alt="スライド4">
+      </div>
+      <!-- 左右のナビゲーションボタン -->
+      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+      <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+  </div>
+  
+
+<header>
+  <h1>ようこそ！</h1>
+</header>
+
+<section>
+  <h2>クラス目標</h2>
+  <p>「」</p>
+</section>
+
+<section>
+  <h2>担任の紹介</h2>
+  <a href="https://agri-student.github.io/introduce/"><p>担任：岡山 先生（食農科学科・ハンドボール部顧問）</p></a>
+</section>
+
+<section>
+  <h2>お知らせ</h2>
+  <ul>
+    <li>4月10日：対面式・学年集会</li>
+    <li>4月18日：授業参観・保護者会</li>
+    <li>毎週金曜：清掃当番の交代日です！</li>
+  </ul>
+</section>
+
+<section>
+  <h2>フォトギャラリー</h2>
+  <div class="gallery">
+    <a href="events/photo1.html"><img src="images/photo1.jpg" alt="集合写真" /></a>
+    <a href="events/photo2.html"><img src="images/photo2.jpg" alt="文化祭の様子" /></a>
+    <a href="events/photo3.html"><img src="images/photo3.jpg" alt="体育祭の一場面" /></a>
+  </div>
+</section>
+
+<section>
+  <h2>生徒の声・作品</h2>
+  <blockquote>「文化祭の準備、すごく楽しかった！」 - Mさん</blockquote>
+  <blockquote>「農場実習でドローンを飛ばして感動！」 - Kくん</blockquote>
+</section>
+<section id="students">
+  <h2>クラスの生徒紹介</h2>
+  <div class="students-container">
+    <div class="student-card">
+      <img src="images/student1.jpg" alt="生徒Aの写真" />
+      <h3>生徒A</h3>
+      <p>好きな科目は数学。部活ではバスケットボールに励んでいます！</p>
+    </div>
+    <div class="student-card">
+      <img src="images/student2.jpg" alt="生徒Bの写真" />
+      <h3>生徒B</h3>
+      <p>理科が得意で、実験が大好き。休日は博物館巡りを楽しんでいます。</p>
+    </div>
+    <div class="student-card">
+      <img src="images/student3.jpg" alt="生徒Cの写真" />
+      <h3>生徒C</h3>
+      <p>文芸部に所属。詩を書いたり、小説を読んだりしています。</p>
+    </div>
+    <!-- 必要に応じて、さらに生徒のカードを追加 -->
+  </div>
+</section>
+
+<script>
+  let slideIndex = 0;
+  showSlides();
+
+  function showSlides() {
+    let i;
+    let slides = document.getElementsByClassName("slide");
+    // すべてのスライドを非表示
+    for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+    }
+    slideIndex++;
+    if (slideIndex > slides.length) { slideIndex = 1; }
+    slides[slideIndex - 1].style.display = "block";
+    // 5秒ごとにスライドを切り替え
+    setTimeout(showSlides, 5000);
+  }
+
+  function plusSlides(n) {
+    // 手動操作時は、現在表示中のスライドを一度非表示にしてから更新
+    let slides = document.getElementsByClassName("slide");
+    slideIndex += n - 1;
+    if (slideIndex < 0) { slideIndex = slides.length - 1; }
+    if (slideIndex >= slides.length) { slideIndex = 0; }
+    for (let i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+    }
+    slides[slideIndex].style.display = "block";
+  }
+</script>
+
+
+</body>
+</html>
