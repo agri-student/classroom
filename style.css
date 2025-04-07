@@ -1,0 +1,252 @@
+:root {
+    --main-color: #2c3e50;
+    --accent-color: #1abc9c;
+    --bg-color: #f4f4f4;
+    --text-color: #333;
+  }
+  
+  body {
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+  }
+
+  /* body全体の背景装飾 */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('田植え.JPG') no-repeat center center/cover;
+  z-index: -2;
+  opacity: 0.3; /* お好みで透明度を調整 */
+}
+
+
+/* hero セクションに高さを指定して、上部のみの表示にする */
+.hero {
+  height: 600px; /* 表示したい高さに合わせて調整 */
+  overflow: hidden; /* スライドショーの画像がはみ出さないように */
+  position: relative;
+}
+
+/* スライドショー全体のコンテナ */
+.slideshow-container {
+  position: relative;
+  width: 100%;
+  height: 100%; /* hero の高さに合わせる */
+  margin: auto;
+}
+
+/* 各スライドを非表示に */
+.slide {
+  display: none;
+  width: 100%;
+  height: 100%; /* コンテナにフィットさせる */
+}
+
+/* 画像サイズの調整 */
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* 画像のアスペクト比を維持しつつコンテナに収める */
+}
+
+/* フェードアニメーション */
+.fade {
+  animation: fade 1.5s;
+}
+
+@keyframes fade {
+  from { opacity: 0.4; }
+  to { opacity: 1; }
+}
+
+/* 左右のナビゲーションボタン */
+.prev, .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: white;
+  font-size: 2em;
+  padding: 0 10px;
+  cursor: pointer;
+  user-select: none;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 3px;
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}
+  
+  header {
+    background: linear-gradient(to right, var(--main-color), var(--accent-color));
+    color: white;
+    padding: 30px 20px;
+    text-align: center;
+  }
+  
+  section {
+    padding: 20px;
+    max-width: 960px;
+    margin: auto;
+  }
+
+  @keyframes gradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  
+  section {
+    background: linear-gradient(270deg, #ff7e5f, #feb47b);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+    color: #fff;
+    padding: 40px;
+  }
+  
+  
+  
+  
+  h2 {
+    color: var(--main-color);
+    border-bottom: 2px solid var(--accent-color);
+    padding-bottom: 5px;
+    margin-top: 40px;
+  }
+  
+  ul {
+    padding-left: 20px;
+  }
+  
+  .gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+  }
+  
+  .gallery a {
+    text-decoration: none;
+  }
+  
+  .gallery img {
+    width: 100%;
+    max-width: 250px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+  }
+  
+  .gallery img:hover {
+    transform: scale(1.05);
+  }
+  
+  blockquote {
+    margin: 15px 0;
+    padding-left: 15px;
+    border-left: 4px solid var(--accent-color);
+    font-style: italic;
+  }
+  
+  @media (max-width: 600px) {
+    header h1 {
+      font-size: 1.8em;
+    }
+    .gallery {
+      flex-direction: column;
+      align-items: center;
+    }
+    .hero {
+      height: 250px;
+    }
+    .hero-text {
+      padding: 10px;
+    }
+  }
+  
+  .students-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+  
+  .student-card {
+    width: 250px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    text-align: center;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+  }
+  
+  .student-card img {
+    width: 100%;
+    height: auto;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 10px;
+  }
+  
+  .student-card h3 {
+    margin: 10px 0 5px;
+  }
+  
+  .student-card p {
+    font-size: 0.9em;
+    color: #555;
+  }
+  
+  @media (max-width: 600px) {
+    /* ヘッダーの文字サイズ調整 */
+    header h1 {
+      font-size: 1.8em;
+      padding: 10px;
+    }
+  
+    /* セクションのパディングを調整 */
+    section {
+      padding: 20px 10px;
+    }
+  
+    /* ヒーローセクションの高さ縮小 */
+    .hero {
+      height: 250px;
+    }
+  
+    /* ギャラリーは縦並びに変更 */
+    .gallery {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    /* ナビゲーションボタンのサイズと配置（必要に応じて微調整） */
+    .prev, .next {
+      font-size: 1.5em;
+      padding: 0 8px;
+    }
+  
+    /* 生徒カードの幅を柔軟に */
+    .student-card {
+      width: 90%; /* 幅を100%に近づけ、中央寄せにする */
+      margin: 10px auto;
+    }
+    
+    /* 画像のオブジェクトフィットを維持しながらサイズを調整 */
+    .slide img, .gallery img, .student-card img {
+      width: 100%;
+      height: auto;
+    }
+  }
+  
