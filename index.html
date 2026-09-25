@@ -4,124 +4,280 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>3年1組 ホームページ</title>
+  <meta name="description" content="食農科学科 3年1組のクラスホームページです。" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
+  <script>document.documentElement.classList.add("js");</script>
 </head>
 <body>
 
-  <div class="hero">
-    <div class="slideshow-container">
-      <div class="slide fade">
-        <img src="https://1drv.ms/i/c/83aab07d285eb13b/IQQclEalTSzDQaQCcvn6UL9SAb_r5KcX5aoBMixt-H3_ybY?width=3984&height=2656" alt="スライド1">
-      </div>
-      <div class="slide fade">
-        <img src="https://1drv.ms/i/c/83aab07d285eb13b/IQTy6QJ0Av8MRKikZupGssi4AWp5MYadnJItX1F2kab-0aY?width=6000&height=3376" alt="スライド2">
-      </div>
-      <div class="slide fade">
-        <img src="https://1drv.ms/i/c/83aab07d285eb13b/IQRosJaC24vXQoGPoz60qhvwAf58TWSRmtw5oAzRDpYTyM4?width=3984&height=2656" alt="スライド3">
-      </div>
-      <div class="slide fade">
-        <img src="https://1drv.ms/i/c/83aab07d285eb13b/IQTBQMTyxwfUR4Wy5Ihn2aSBAfXu30sh0gMDSvFP3U26b4Q?width=1024" alt="スライド4">
-      </div>
-      
-      <!-- 左右のナビゲーションボタン -->
-      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-      <a class="next" onclick="plusSlides(1)">&#10095;</a>
+  <!-- ヘッダー（上部固定のナビゲーション） -->
+  <header class="site-header" id="top">
+    <div class="site-header__inner">
+      <a class="logo" href="#top" aria-label="3年1組 トップへ">
+        <span class="logo__num">3-1</span>
+        <span class="logo__text">食農科学科</span>
+      </a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="global-nav">
+        <span class="menu-toggle__bar"></span>
+        <span class="visually-hidden">メニュー</span>
+      </button>
+      <nav class="global-nav" id="global-nav" aria-label="ページ内メニュー">
+        <ul>
+          <li><a href="#goal">クラス目標</a></li>
+          <li><a href="#teacher">担任</a></li>
+          <li><a href="#news">お知らせ</a></li>
+          <li><a href="#gallery">ギャラリー</a></li>
+          <li><a href="#voices">生徒の声</a></li>
+          <li><a href="#students">メンバー</a></li>
+        </ul>
+      </nav>
     </div>
-  </div>
-  
+  </header>
 
-<header>
-  <h1>ようこそ！</h1>
-</header>
+  <main>
 
-<section>
-  <h2>クラス目標</h2>
-  <p>「」</p>
-</section>
+    <!-- ヒーロー（スライドショー） -->
+    <section class="hero" aria-label="クラスの写真">
+      <div class="hero__slides">
+        <img class="hero__slide is-active" src="https://1drv.ms/i/c/83aab07d285eb13b/IQQclEalTSzDQaQCcvn6UL9SAb_r5KcX5aoBMixt-H3_ybY?width=3984&height=2656" alt="クラスの写真1" />
+        <img class="hero__slide" src="https://1drv.ms/i/c/83aab07d285eb13b/IQTy6QJ0Av8MRKikZupGssi4AWp5MYadnJItX1F2kab-0aY?width=6000&height=3376" alt="クラスの写真2" loading="lazy" />
+        <img class="hero__slide" src="https://1drv.ms/i/c/83aab07d285eb13b/IQRosJaC24vXQoGPoz60qhvwAf58TWSRmtw5oAzRDpYTyM4?width=3984&height=2656" alt="クラスの写真3" loading="lazy" />
+        <img class="hero__slide" src="https://1drv.ms/i/c/83aab07d285eb13b/IQTBQMTyxwfUR4Wy5Ihn2aSBAfXu30sh0gMDSvFP3U26b4Q?width=1024" alt="クラスの写真4" loading="lazy" />
+      </div>
 
-<section>
-  <h2>担任の紹介</h2>
-  <a href="https://agri-student.github.io/introduce/"><p>担任：岡山 幸太（食農科学科：作物）</p></a>
-</section>
+      <div class="hero__content">
+        <p class="hero__eyebrow">Class 3-1 — Food &amp; Agricultural Science</p>
+        <h1 class="hero__title">3年1組<span>ようこそ！</span></h1>
+      </div>
 
-<section>
-  <h2>お知らせ</h2>
-  <ul>
-    <li>1学期中間考査5月16日(金)～21日(水)</li>
-    <li>7月1日求人票受付開始</li>
-    <li>9月15日就職試験開始</li>
-  </ul>
-</section>
+      <div class="hero__controls">
+        <button class="hero__arrow" type="button" data-dir="-1" aria-label="前の写真">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7" /></svg>
+        </button>
+        <div class="hero__dots" role="group" aria-label="写真を選ぶ"></div>
+        <button class="hero__arrow" type="button" data-dir="1" aria-label="次の写真">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7" /></svg>
+        </button>
+      </div>
+    </section>
 
-<section>
-  <h2>フォトギャラリー</h2>
-  <div class="gallery">
-    <a href="https://1drv.ms/f/c/83aab07d285eb13b/Eruz14y2i8ZClLuNa_E0UPgBzg7OytS07GELTZ1wxJZx9A?e=oEsEqa" target="_blank">
-      <img src="https://1drv.ms/i/c/83aab07d285eb13b/IQSL5KRnyzGuQK6iA1-DhU1RAcubsUvbaHHi-CRCsPpCD7o?width=4032&height=3024" alt="修学旅行" />
-    </a>
-    <a href="events/photo2.html"><img src="images/photo2.jpg" alt="文化祭の様子" /></a>
-    <a href="events/photo3.html"><img src="images/photo3.jpg" alt="体育祭の一場面" /></a>
-  </div>
-</section>
+    <!-- 01 クラス目標 -->
+    <section class="section section--goal" id="goal">
+      <div class="container">
+        <header class="section-head reveal">
+          <span class="section-head__num">01</span>
+          <p class="section-head__en">Class Goal</p>
+          <h2 class="section-head__title">クラス目標</h2>
+        </header>
+        <!-- 「」の中にクラス目標を書いてください -->
+        <p class="goal reveal">「<span class="goal__text"></span>」</p>
+      </div>
+    </section>
 
-<section>
-  <h2>生徒の声・作品</h2>
-  <blockquote>「文化祭の準備、すごく楽しかった！」 - Mさん</blockquote>
-  <blockquote>「農場実習でドローンを飛ばして感動！」 - Kくん</blockquote>
-</section>
-<section id="students">
-  <h2>クラスの生徒紹介</h2>
-  <div class="students-container">
-    <div class="student-card">
-      <img src="https://1drv.ms/i/c/83aab07d285eb13b/IQRPbLzgdUoCSoZ7fzgELJHkAWY9YKmNGjou7FfHkBhPlB4?width=1024&height=1024" alt=担任の写真" />
-      <h3>岡山幸太</h3>
-      <p>よろしくお願いします。</p>
+    <!-- 02 担任の紹介 -->
+    <section class="section" id="teacher">
+      <div class="container">
+        <header class="section-head reveal">
+          <span class="section-head__num">02</span>
+          <p class="section-head__en">Homeroom Teacher</p>
+          <h2 class="section-head__title">担任の紹介</h2>
+        </header>
+        <article class="teacher reveal">
+          <div class="teacher__photo">
+            <img src="https://1drv.ms/i/c/83aab07d285eb13b/IQRPbLzgdUoCSoZ7fzgELJHkAWY9YKmNGjou7FfHkBhPlB4?width=1024&height=1024" alt="担任の写真" loading="lazy" />
+          </div>
+          <div class="teacher__body">
+            <p class="teacher__role">担任｜食農科学科：作物</p>
+            <h3 class="teacher__name">岡山 幸太</h3>
+            <p class="teacher__message">よろしくお願いします。</p>
+            <a class="button" href="https://agri-student.github.io/introduce/">
+              詳しいプロフィール
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
+            </a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- 03 お知らせ -->
+    <section class="section section--tint" id="news">
+      <div class="container">
+        <header class="section-head reveal">
+          <span class="section-head__num">03</span>
+          <p class="section-head__en">News</p>
+          <h2 class="section-head__title">お知らせ</h2>
+        </header>
+        <ul class="news reveal">
+          <li class="news__item">
+            <p class="news__date">5.16<small>金</small> — 5.21<small>水</small></p>
+            <p class="news__text">1学期中間考査</p>
+          </li>
+          <li class="news__item">
+            <p class="news__date">7.1</p>
+            <p class="news__text">求人票受付開始</p>
+          </li>
+          <li class="news__item">
+            <p class="news__date">9.15</p>
+            <p class="news__text">就職試験開始</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 04 フォトギャラリー -->
+    <section class="section" id="gallery">
+      <div class="container">
+        <header class="section-head reveal">
+          <span class="section-head__num">04</span>
+          <p class="section-head__en">Photo Gallery</p>
+          <h2 class="section-head__title">フォトギャラリー</h2>
+        </header>
+        <div class="gallery reveal">
+          <a class="gallery__item gallery__item--large" href="https://1drv.ms/f/c/83aab07d285eb13b/Eruz14y2i8ZClLuNa_E0UPgBzg7OytS07GELTZ1wxJZx9A?e=oEsEqa" target="_blank" rel="noopener">
+            <img src="https://1drv.ms/i/c/83aab07d285eb13b/IQSL5KRnyzGuQK6iA1-DhU1RAcubsUvbaHHi-CRCsPpCD7o?width=4032&height=3024" alt="修学旅行" loading="lazy" />
+            <span class="gallery__caption">修学旅行<small>アルバムを見る ↗</small></span>
+          </a>
+          <!-- 写真ができたら、下の div を修学旅行と同じ a 要素に置き換えてください -->
+          <div class="gallery__item gallery__item--empty">
+            <span class="gallery__caption">文化祭の様子<small>写真準備中</small></span>
+          </div>
+          <div class="gallery__item gallery__item--empty">
+            <span class="gallery__caption">体育祭の一場面<small>写真準備中</small></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 05 生徒の声・作品 -->
+    <section class="section section--dark" id="voices">
+      <div class="container">
+        <header class="section-head reveal">
+          <span class="section-head__num">05</span>
+          <p class="section-head__en">Voices</p>
+          <h2 class="section-head__title">生徒の声・作品</h2>
+        </header>
+        <div class="voices reveal">
+          <figure class="voice">
+            <blockquote>文化祭の準備、すごく楽しかった！</blockquote>
+            <figcaption>Mさん</figcaption>
+          </figure>
+          <figure class="voice">
+            <blockquote>農場実習でドローンを飛ばして感動！</blockquote>
+            <figcaption>Kくん</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- 06 クラスの生徒紹介 -->
+    <section class="section" id="students">
+      <div class="container">
+        <header class="section-head reveal">
+          <span class="section-head__num">06</span>
+          <p class="section-head__en">Members</p>
+          <h2 class="section-head__title">クラスの生徒紹介</h2>
+        </header>
+        <div class="students reveal">
+          <!-- 写真がある場合は <span class="student__avatar">B</span> を <img class="student__avatar" src="..." alt="..."> に置き換えてください -->
+          <article class="student">
+            <span class="student__avatar" aria-hidden="true">B</span>
+            <h3 class="student__name">生徒B</h3>
+            <p class="student__text">理科が得意で、実験が大好き。休日は博物館巡りを楽しんでいます。</p>
+          </article>
+          <article class="student">
+            <span class="student__avatar" aria-hidden="true">C</span>
+            <h3 class="student__name">生徒C</h3>
+            <p class="student__text">文芸部に所属。詩を書いたり、小説を読んだりしています。</p>
+          </article>
+          <!-- 必要に応じて、さらに生徒のカードを追加 -->
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <p class="site-footer__name"><span>3-1</span>食農科学科 3年1組</p>
+      <a class="site-footer__top" href="#top">ページの先頭へ ↑</a>
     </div>
-    <div class="student-card">
-      <img src="images/student2.jpg" alt="生徒Bの写真" />
-      <h3>生徒B</h3>
-      <p>理科が得意で、実験が大好き。休日は博物館巡りを楽しんでいます。</p>
-    </div>
-    <div class="student-card">
-      <img src="images/student3.jpg" alt="生徒Cの写真" />
-      <h3>生徒C</h3>
-      <p>文芸部に所属。詩を書いたり、小説を読んだりしています。</p>
-    </div>
-    <!-- 必要に応じて、さらに生徒のカードを追加 -->
-  </div>
-</section>
+  </footer>
 
 <script>
-  let slideIndex = 0;
-  showSlides();
+  // ---- スライドショー ----
+  (function () {
+    const slides = document.querySelectorAll(".hero__slide");
+    const dotsWrap = document.querySelector(".hero__dots");
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    let index = 0;
+    let timer = null;
 
-  function showSlides() {
-    let i;
-    let slides = document.getElementsByClassName("slide");
-    // すべてのスライドを非表示
-    for (i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none";
-    }
-    slideIndex++;
-    if (slideIndex > slides.length) { slideIndex = 1; }
-    slides[slideIndex - 1].style.display = "block";
-    // 5秒ごとにスライドを切り替え
-    setTimeout(showSlides, 5000);
-  }
+    const dots = Array.from(slides, (_, i) => {
+      const dot = document.createElement("button");
+      dot.type = "button";
+      dot.className = "hero__dot";
+      dot.setAttribute("aria-label", (i + 1) + "枚目の写真");
+      dot.addEventListener("click", () => { show(i); restart(); });
+      dotsWrap.appendChild(dot);
+      return dot;
+    });
 
-  function plusSlides(n) {
-    // 手動操作時は、現在表示中のスライドを一度非表示にしてから更新
-    let slides = document.getElementsByClassName("slide");
-    slideIndex += n - 1;
-    if (slideIndex < 0) { slideIndex = slides.length - 1; }
-    if (slideIndex >= slides.length) { slideIndex = 0; }
-    for (let i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none";
+    function show(i) {
+      index = (i + slides.length) % slides.length;
+      slides.forEach((s, n) => s.classList.toggle("is-active", n === index));
+      dots.forEach((d, n) => d.setAttribute("aria-current", n === index ? "true" : "false"));
     }
-    slides[slideIndex].style.display = "block";
-  }
+
+    function restart() {
+      if (reduceMotion) return;
+      clearInterval(timer);
+      timer = setInterval(() => show(index + 1), 6000);
+    }
+
+    document.querySelectorAll(".hero__arrow").forEach((btn) => {
+      btn.addEventListener("click", () => { show(index + Number(btn.dataset.dir)); restart(); });
+    });
+
+    show(0);
+    restart();
+  })();
+
+  // ---- スマホ用メニュー ----
+  (function () {
+    const toggle = document.querySelector(".menu-toggle");
+    const nav = document.getElementById("global-nav");
+    toggle.addEventListener("click", () => {
+      const open = toggle.getAttribute("aria-expanded") === "true";
+      toggle.setAttribute("aria-expanded", String(!open));
+      nav.classList.toggle("is-open", !open);
+    });
+    nav.querySelectorAll("a").forEach((a) => a.addEventListener("click", () => {
+      toggle.setAttribute("aria-expanded", "false");
+      nav.classList.remove("is-open");
+    }));
+  })();
+
+  // ---- スクロールでふわっと表示 ----
+  (function () {
+    const items = document.querySelectorAll(".reveal");
+    if (!("IntersectionObserver" in window)) {
+      items.forEach((el) => el.classList.add("is-visible"));
+      return;
+    }
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (e.isIntersecting) {
+          e.target.classList.add("is-visible");
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    items.forEach((el) => io.observe(el));
+  })();
 </script>
-
 
 </body>
 </html>
